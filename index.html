@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World!</title>
+    <title>WhatsApp Desktop</title>
+    <style type="text/css">	
+
+    *{
+	  margin:0; 
+	  padding:0;  
+	}
+	html,body{
+	  width: 100%; height: 100%;
+	}
+
+	body{ 
+	  overflow:hidden; 
+	}
+
+	#wv1{ 
+	  width: 100%; 
+	  height: 100%; 
+	}
+
+	button {
+  -webkit-app-region: no-drag;
+}
+
+#title-bar {
+ -webkit-app-region: drag;
+ height: 32px; 
+ padding: 0px;
+ margin: 0px; 
+ color: #fff;
+ font-family: sans-serif;
+ background-color: #009688;
+}
+
+#title {
+ position: fixed;
+ top: 0px;
+ left: 12px; 
+ line-height: 32px;
+ font-size: 14px;
+}
+
+#title-bar-btns {
+ -webkit-app-region: no-drag;
+ position: fixed;
+ top: 1px;
+ right: 0px; 
+}
+
+#title-bar-btns button {
+ height: 32px;
+ width: 32px;
+ background-color: transparent;
+ border: none;
+ color: #F1F1F1;
+ font-size: 16px;
+}
+
+#title-bar-btns button:hover, #title-bar-btns button:active, #title-bar-btns button:focus{
+ color: #fff;
+ border-color: none;
+ outline: none;
+}
+
+
+
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+  	<div id="title-bar">
+          <div id="title">WhatsApp Desktop</div>
+          <div id="title-bar-btns">
+               <button id="min" >-</button>
+               <button id="max">+</button>
+               <button id="close">x</button>
+          </div>
+     </div>
+    <webview id="wv1" src="https://web.whatsapp.com/" partition="" useragent="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36" plugins></webview>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
