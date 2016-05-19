@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Whatsapp-Desktop
 
 **Clone and run for a quick way to see an Electron in action.**
